@@ -1,10 +1,12 @@
 import { Github, Check } from "lucide-react";
+import franchifiImg from "../assets/images/franchifi_dashboard_1782547289875.jpg.png";
+import legallinkImg from "../assets/images/legallink_homepage_1782547304841.jpg.jpg";
 
 const PROJECTS = [
   {
     eyebrow: "FRANCHISE MANAGEMENT PLATFORM",
     title: "Franchifi",
-    image: "/src/assets/images/franchifi_dashboard_1782547289875.jpg.png",
+    image: franchifiImg,
     url: "https://franchifi.co/dashboard",
     github: "https://github.com/mrunaligangnaik/FranchiFi-Platform-",
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Razorpay"],
@@ -18,7 +20,7 @@ const PROJECTS = [
   {
     eyebrow: "LEGAL SERVICES BOOKING PLATFORM",
     title: "LegalLink",
-    image: "/src/assets/images/legallink_homepage_1782547304841.jpg.jpg",
+    image: legallinkImg,
     url: "https://legallink.org/appointments",
     github: "https://github.com/mrunaligangnaik/LegalLink-",
     tags: ["React.js", "Node.js", "Express.js", "MongoDB"],
