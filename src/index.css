@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+/* CSS Custom Theme Variables for Light and Dark Modes */
+:root {
+  --bg-base: #FAF7F2;
+  --bg-card: #FFFFFF;
+  --text-dark: #1E1B18;
+  --text-muted: #5C554F;
+  --terracotta-primary: #A45C3F;
+  --terracotta-hover: #8D4E33;
+  --accent-green: #22C55E;
+  
+  /* Utilities */
+  --border-color: rgba(30, 27, 24, 0.05);
+  --border-color-10: rgba(30, 27, 24, 0.1);
+  --border-color-15: rgba(30, 27, 24, 0.15);
+  --bg-tag: rgba(164, 92, 63, 0.04);
+  --bg-tag-hover: rgba(164, 92, 63, 0.08);
+  --bg-mini-app: #FAF7F2;
+}
+
+.dark {
+  --bg-base: #0E0D0C; /* Rich deep editorial dark brown/black */
+  --bg-card: #161513; /* Slate warm dark card background */
+  --text-dark: #F5F2EA; /* Soft elegant cream white */
+  --text-muted: #A39B95; /* Elegant warm-gray muted text */
+  --terracotta-primary: #DC8F70; /* Boosted brighter terracotta for dark theme accessibility */
+  --terracotta-hover: #E7A488;
+  --accent-green: #4ADE80;
+  
+  /* Utilities */
+  --border-color: rgba(245, 242, 234, 0.06);
+  --border-color-10: rgba(245, 242, 234, 0.12);
+  --border-color-15: rgba(245, 242, 234, 0.18);
+  --bg-tag: rgba(220, 143, 112, 0.08);
+  --bg-tag-hover: rgba(220, 143, 112, 0.15);
+  --bg-mini-app: #1D1B19;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Dynamic Custom Palette mapped directly to light/dark CSS custom properties */
+  --color-cream-base: var(--bg-base);
+  --color-cream-card: var(--bg-card);
+  --color-charcoal-dark: var(--text-dark);
+  --color-charcoal-muted: var(--text-muted);
+  --color-terracotta-primary: var(--terracotta-primary);
+  --color-terracotta-hover: var(--terracotta-hover);
+  --color-accent-green: var(--accent-green);
+}
+
+/* Custom styles for editorial look and smooth transition support */
+body {
+  background-color: var(--bg-base);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Add default transition to the wrapper, nav headers, and other container blocks */
+.theme-transition {
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar to match the design */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: #E5DFC9;
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #3A3530;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D5CEB5;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4D4741;
+}
+
+/* Selection highlight */
+::selection {
+  background-color: rgba(164, 92, 63, 0.25);
+  color: var(--text-dark);
+}
+.dark ::selection {
+  background-color: rgba(220, 143, 112, 0.3);
+  color: #FFFFFF;
+}
+
+/* Hover scales and premium animations */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.08);
+}
+.dark .hover-lift:hover {
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.4);
+}
